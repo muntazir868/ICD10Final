@@ -13,7 +13,7 @@ logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %
 app = Flask(__name__)
 
 # Set a secret key for the session
-app.secret_key = secret_key  # Replace with a unique and secret key
+app.secret_key = secret_key  # saved in the config.py file.
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
