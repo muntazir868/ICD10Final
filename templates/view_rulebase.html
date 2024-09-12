@@ -15,8 +15,19 @@
     <link rel="shortcut icon" type="image/x-icon" href="/static/images/favicon-32x32.png" />
     <title>View Rulebase</title>
     <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container-fluid {
+            padding: 0;
+            max-width: 1800px;
+        }
+
         .form-container {
-            max-width: 1000px;
+            max-width: 100%;
             margin: 0 auto;
             background: #fff;
             padding: 20px;
@@ -96,18 +107,10 @@
 
         /* Increase column widths */
         th:nth-child(1), td:nth-child(1) { width: 20%; } /* Disease Name */
-        th:nth-child(2), td:nth-child(2) { width: 15%; } /* Disease Code */
-        th:nth-child(3), td:nth-child(3) { width: 15%; } /* Category */
-        th:nth-child(4), td:nth-child(4) { width: 40%; } /* Rules */
+        th:nth-child(2), td:nth-child(2) { width: 5%; } /* Disease Code */
+        th:nth-child(3), td:nth-child(3) { width: 10%; } /* Category */
+        th:nth-child(4), td:nth-child(4) { width: 55%; } /* Rules */
         th:nth-child(5), td:nth-child(5) { width: 10%; } /* Actions */
-
-        /* Adjust table container to reduce empty space */
-        .appoinment-wrap {
-            width: 100%;
-            max-width: 1500px; /* Adjust this value as needed */
-            margin: 0 auto;
-            padding: 20px;
-        }
 
         /* Ensure table takes full width of the container */
         .appoinment-wrap table {
@@ -120,11 +123,14 @@
         }
 
         .condition-row {
+            display: flex;
+            flex-wrap: wrap;
             margin-left: 20px;
         }
 
         .condition-row p {
             margin: 5px 0;
+            flex: 1 1 30%; /* Adjust this value to control the width of each condition item */
         }
 
         /* Add space between buttons */
@@ -136,7 +142,7 @@
 <body>
 <header>
     <div class="header-top-bar">
-        <div class="container">
+        <div class="container-fluid">
             <div class="row align-items-center">
                 <div class="col-lg-6">
                     <ul class="top-bar-info list-inline-item pl-0 mb-0">
@@ -156,7 +162,7 @@
         </div>
     </div>
     <nav class="navbar navbar-expand-lg navigation" id="navbar">
-        <div class="container">
+        <div class="container-fluid">
             <a class="navbar-brand" href="/">
                 <img src="/static/images/logo.png" alt="" class="img-fluid" style="width: 150px; height: auto;">
             </a>
@@ -178,7 +184,7 @@
 </header>
 
 <section class="section appoinment">
-    <div class="container">
+    <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-lg-12">
                 <div class="appoinment-wrap mt-5 mt-lg-0">
@@ -213,8 +219,8 @@
                                             {% for rule_entry in rule.rules %}
                                                 <div class="rule-entry">
                                                     <strong>Rule Entry {{ rule_entry.rule_id }}</strong>
-                                                    {% for condition in rule_entry.conditions %}
-                                                        <div class="condition-row">
+                                                    <div class="condition-row">
+                                                        {% for condition in rule_entry.conditions %}
                                                             <p><strong>Type:</strong> {{ condition.type }}</p>
                                                             <p><strong>Parameter:</strong> {{ condition.parameter }}</p>
                                                             <p><strong>Unit:</strong> {{ condition.unit }}</p>
@@ -232,8 +238,8 @@
                                                                 <p><strong>Comparison Time Value:</strong> {{ condition.comparison_time_value }}</p>
                                                                 <p><strong>Time:</strong> {{ condition.time }}</p>
                                                             {% endif %}
-                                                        </div>
-                                                    {% endfor %}
+                                                        {% endfor %}
+                                                    </div>
                                                 </div>
                                             {% endfor %}
                                         </td>
@@ -258,7 +264,7 @@
 
 <!--- Footer -->
 <footer class="footer section gray-bg">
-    <div class="container">
+    <div class="container-fluid">
       <div class="row">
         <div class="col-lg-4 mr-auto col-sm-6">
           <div class="widget mb-5 mb-lg-0">

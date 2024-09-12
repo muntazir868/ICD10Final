@@ -793,5 +793,93 @@
         }
     </script>
 
+    <!-- Footer -->
+    <footer class="footer section gray-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mr-auto col-sm-6">
+                    <div class="widget mb-5 mb-lg-0">
+                        <div class="logo mb-4">
+                            <img src="/static/images/logo.png" alt="" class="img-fluid" style="width: 150px; height: auto;">
+                        </div>
+                        <p>Supporting precise medical coding with advanced technology.</p>
+                        <ul class="list-inline footer-socials mt-4">
+                            <li class="list-inline-item">
+                                <a href="https://www.facebook.com/CureMD.HR/"><i class="icofont-facebook"></i></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="https://twitter.com/CureMD/"><i class="icofont-twitter"></i></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="https://www.linkedin.com/company/curemd/"><i class="icofont-linkedin"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 col-sm-6">
+                    <div class="widget mb-5 mb-lg-0">
+                        <h4 class="text-capitalize mb-3">Quick Links</h4>
+                        <div class="divider mb-4"></div>
+                        <ul class="list-unstyled footer-menu lh-35">
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/about">About Us</a></li>
+                            <li><a href="/rulebase">Add Rule</a></li>
+                            <li><a href="/view_patient_data">Patient Data</a></li>
+                            <li><a href="/lab_values">Diagnose</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="widget widget-contact mb-5 mb-lg-0">
+                        <h4 class="text-capitalize mb-3">Get in Touch</h4>
+                        <div class="divider mb-4"></div>
+                        <div class="footer-contact-block mb-4">
+                            <div class="icon d-flex align-items-center">
+                                <i class="icofont-email mr-3"></i>
+                                <span class="h6 mb-0">Support Available for 24/7</span>
+                            </div>
+                            <h4 class="mt-2"><a href="mailto:support@email.com">Support@expert-system.com</a></h4>
+                        </div>
+                        <div class="footer-contact-block">
+                            <div class="icon d-flex align-items-center">
+                                <i class="icofont-support mr-3"></i>
+                                <span class="h6 mb-0">Mon to Fri : 08:30 - 18:00</span>
+                            </div>
+                            <h4 class="mt-2"><a href="tel:+23-345-67890">+23-456-6588</a></h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-btm py-4 mt-5">
+                <div class="row align-items-center justify-content-between">
+                    <div class="col-lg-6">
+                        <div class="copyright">
+                            Copyright &copy; 2024, Designed &amp; Developed by <a href="#">Team 9</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="plugins/jquery/jquery.js"></script>
+    <script src="plugins/bootstrap/bootstrap.min.js"></script>
+    <script src="plugins/slick-carousel/slick/slick.min.js"></script>
+    <script src="plugins/shuffle/shuffle.min.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('a[href^="#"]').on('click', function(event) {
+                var target = $(this.getAttribute('href'));
+                if( target.length ) {
+                    event.preventDefault();
+                    $('html, body').stop().animate({
+                        scrollTop: target.offset().top
+                    }, 1000);
+                }
+            });
+        });
+    </script>
+
 </body>
 </html>
