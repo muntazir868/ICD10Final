@@ -23,6 +23,25 @@ class Controller:
     """
     Controller class that handles the routing and logic for the Flask application.
     """
+    def __init__(self):
+        """
+        Initializes the Controller class.
+
+        This method establishes connections to the MongoDB database and initializes the DatabaseManager and RulebaseApp instances.
+        If any error occurs during the initialization process, it logs the error and exits the program.
+
+        Parameters:
+        None
+
+        Returns:
+        None
+        """
+        try:
+            self.db_manager = DatabaseManager(mongodb_link, 'ExpertSystem')
+            self.rulebase_app = RulebaseApp(self.db_manager)
+            self.lab_input_user_values_collection = self.db_manager.get_collection(lab_values_collection)
+        except Exception as e:
+            app.logger.error(f"Error connecting to MongoDB: {e}")
 
     def __init__(self):
         try:
